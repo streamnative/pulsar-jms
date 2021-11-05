@@ -973,8 +973,14 @@ public class PulsarConnectionFactory
         List<String> allTopics = pulsarAdmin.topics().getList(systemNamespace);
         for (String topic : allTopics) {
           log.info("Scanning topic {}", topic);
-          List<String> subscriptions = pulsarAdmin.topics().getSubscriptions(topic);
-          log.info("Subscriptions {}", subscriptions);
+          List<String> subscriptions;
+          try {
+            subscriptions = pulsarAdmin.topics().getSubscriptions(topic);
+            log.info("Subscriptions {}", subscriptions);
+          } catch (PulsarAdminException.NotFoundException notFound) {
+            log.error("Skipping topic {}", topic);
+            subscriptions = Collections.emptyList();
+          }
           for (String subscription : subscriptions) {
             log.info("Found subscription {} ", subscription);
             if (subscription.equals(name)) {
