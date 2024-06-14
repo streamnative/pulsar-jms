@@ -40,5 +40,5 @@ jobs:
           SNBOT_SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SNBOT_SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
         run: |-
-          ci/.github/bot/setup-git.sh
+          ../ci/.github/bot/setup-git.sh
           mvn -U clean deploy -s ../ci/tools/maven/settings.xml -DskipTests -Prelease
