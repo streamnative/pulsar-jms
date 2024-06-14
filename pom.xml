@@ -408,13 +408,13 @@ limitations under the License.]]></inlineHeader>
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.8</version>
+        <version>1.6.13</version>
         <extensions>true</extensions>
         <configuration>
           <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>false</autoReleaseAfterClose>
-          <skipLocalStaging>true</skipLocalStaging>
+          <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          <stagingProgressTimeoutMinutes>30</stagingProgressTimeoutMinutes>
         </configuration>
       </plugin>
     </plugins>
