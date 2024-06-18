@@ -413,7 +413,7 @@ limitations under the License.]]></inlineHeader>
         <configuration>
           <serverId>ossrh</serverId>
           <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>false</autoReleaseAfterClose>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
           <stagingProgressTimeoutMinutes>30</stagingProgressTimeoutMinutes>
         </configuration>
       </plugin>
