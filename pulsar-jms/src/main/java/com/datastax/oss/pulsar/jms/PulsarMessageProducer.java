@@ -860,6 +860,9 @@ class PulsarMessageProducer implements MessageProducer, TopicPublisher, QueueSen
       // res.setJMSExpiration(message.getJMSExpiration());
     } else {
       res = (PulsarMessage) message;
+      res.setJMSMessageID(null);
+      res.setJMSTimestamp(0);
+      res.setJMSExpiration(0);
     }
     res.setWritable(true);
     res.setStringProperty("JMSConnectionID", session.getConnection().getConnectionId());

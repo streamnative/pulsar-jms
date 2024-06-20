@@ -999,6 +999,8 @@ public class PulsarConnectionFactory
       } catch (Exception ignore) {
         // ignore
         Utils.handleException(ignore);
+      } finally {
+        this.unregisterConnection(con);
       }
     }
 
